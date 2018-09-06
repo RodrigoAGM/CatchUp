@@ -1,2 +1,2 @@
-# CatchUp_App
-Simple weather app 
+# CatchUp
+Simple news app 
