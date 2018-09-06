@@ -14,6 +14,7 @@ class ArticleAdapter(val articles:List<Article>, val context: Context):
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val article = articles.get(position)
+        TODO("Assign picture image")
         holder.titleTextView.text = article.title
     }
 

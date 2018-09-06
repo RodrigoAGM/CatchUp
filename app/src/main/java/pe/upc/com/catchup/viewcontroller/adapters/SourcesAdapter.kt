@@ -15,6 +15,7 @@ class SourcesAdapter(val sources:List<Source>, val context:Context):
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
         val source = sources.get(position)
+        TODO("Assign logo image")
         holder.nameTextView.text = source.name
     }
 
