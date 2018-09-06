@@ -2,26 +2,33 @@ package pe.upc.com.catchup.viewcontroller.adapters
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import javax.xml.transform.Source
+import kotlinx.android.synthetic.main.item_source.view.*
+import pe.upc.com.catchup.R
+import pe.upc.com.catchup.models.Source
 
 class SourcesAdapter(val sources:List<Source>, val context:Context):
         RecyclerView.Adapter<ViewHolder>(){
-    override fun onBindViewHolder(holder: ViewHolder?, position: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+
+        val source = sources.get(position)
+        holder.nameTextView.text = source.name
     }
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): ViewHolder {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return ViewHolder(LayoutInflater.from(context).inflate(R.layout.item_source, parent, false))
     }
 
     override fun getItemCount(): Int {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return sources.size
     }
-    
+
 }
 
 class ViewHolder(view:View):RecyclerView.ViewHolder(view){
-
+    val logoImageView = view.logoImageView
+    val nameTextView = view.nameTextView
 }
