@@ -10,7 +10,7 @@ import pe.upc.com.catchup.R
 import pe.upc.com.catchup.models.Source
 
 class SourcesAdapter(val sources:List<Source>, val context:Context):
-        RecyclerView.Adapter<ViewHolder>(){
+        RecyclerView.Adapter<SourcesAdapter.ViewHolder>(){
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
@@ -26,9 +26,9 @@ class SourcesAdapter(val sources:List<Source>, val context:Context):
         return sources.size
     }
 
-}
+    class ViewHolder(view:View):RecyclerView.ViewHolder(view){
+        val logoImageView = view.logoImageView
+        val nameTextView = view.nameTextView
+    }
 
-class ViewHolder(view:View):RecyclerView.ViewHolder(view){
-    val logoImageView = view.logoImageView
-    val nameTextView = view.nameTextView
 }
